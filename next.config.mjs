@@ -2,4 +2,4 @@
 const nextConfig = {};
 module.exports = { images: { domains: ['https://drive.google.com/drive/'], formats: ['image/avif', 'image/webp'], }, }
 
-export default nextConfig;
+export default module;
