@@ -11,7 +11,7 @@ const MENU_LIST = [
 
 
 function Header() {
-    const [navActive, setNavActive] = useState<null>(null);
+    const [navActive, setNavActive] = useState(null);
     const [activeIdx, setActiveIdx] = useState(-1);
     return (
         <>
