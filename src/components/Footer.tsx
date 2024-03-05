@@ -7,6 +7,7 @@ import { FaYoutube } from "react-icons/fa";
 function Footer() {
   return (
     <>
+    <div className="sticky bottom">
       <div className="bg-gray-50 h-1/2 w-full flex md:flex-row flex-col justify-around items-start p-20">
         <div className="p-5 ">
           <ul>
@@ -24,9 +25,6 @@ function Footer() {
         <div className="p-5">
           <ul>
             <p className="text-gray-800 font-bold text-2xl pb-4">Product</p>
-            <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
-              Stocks
-            </li>
             <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
               Futures & Options
             </li>
@@ -65,15 +63,6 @@ function Footer() {
               Contact
             </li>
             <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
-              Support Portals
-            </li>
-            <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
-              List Of Charges
-            </li>
-            <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
-              Downloads & Resources
-            </li>
-            <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
               Videos
             </li>
           </ul>
@@ -86,6 +75,7 @@ function Footer() {
             the Leader of the Le clan{" "}
           </span>
         </h1>
+      </div>
       </div>
     </>
   );
