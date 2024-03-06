@@ -33,6 +33,8 @@ This is common in every Search Bar
 Right now, the Navbar is "overriding" the Content component.
 The Footer was pushed down to the bottom, so it is no longer a concern.
 ----------------------------------------
+I created the "routes" folder.
+We will declare the routes in there later. 
 ----------------------------------------
 ----------------------------------------
 ----------------------------------------
