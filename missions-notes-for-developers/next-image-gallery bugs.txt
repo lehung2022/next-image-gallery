@@ -1,0 +1,42 @@
+src/components/NoteComponents/CreateNote.tsx(18,9): error TS2322: Type 'string' is not assignable to type 'number'.
+src/components/NoteComponents/CreateNote.tsx(19,9): error TS2322: Type 'string' is not assignable to type 'number'.
+src/components/NoteComponents/CreateNote.tsx(23,9): error TS2322: Type 'string' is not assignable to type 'number'.
+Error: Command "npm run build" exited with 2
+https://www.typescriptlang.org/docs/handbook/2/everyday-types.html
+=> These are from the note-app project
+-----------------------------------------------------------------------
+image gallery app bugs: 
+"Error: Invalid src prop (https://drive.google.com/drive/folders/1RZp6WRvO0JFwTyfp_ou7jGXoPb-XsVMh) on next/image, hostname "drive.google.com" is not configured under images in your next.config.js"
+Solution: 
+in next.config.mjs file: 
+/** @type {import('next').NextConfig} */
+const nextConfig = {};
+module.exports = { images: { domains: ['https://drive.google.com/drive/'], formats: ['image/avif', 'image/webp'], }, }
+
+export default nextConfig;
+
+-----------------------------------------------------------------------
+https://www.youtube.com/watch?v=hJ7Rg1821Q0
+=> How To Load Images Like A Pro
+00:00 - Introduction
+00:35 - What Is The Problem
+02:17 - Lazy Loading Basics
+05:15 - Advanced Blurry Loading
+-----------------------------------------------------------------------
+Write the ideas on moqups
+-----------------------------------------------------------------------
+The three components are over lapping one another.
+More specifically, the Content component is on top of the Navbar component.
+I need to re-watch the next.js videos of Dave Gray to understand this more
+Solution:
+Need to bring the Footer to the bottom, and stick it there.
+Go to Tailwind css site and look for "position"
+https://flowbite.com/docs/components/footer/
+https://stackoverflow.com/questions/59812003/tailwindcss-fixed-sticky-footer-on-the-bottom
+https://tailwindcomponents.com/component/simple-nice-and-responsive-footer
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
