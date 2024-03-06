@@ -32,6 +32,7 @@ This is common in every Search Bar
 - Adjust the three components, to make them stay in the right directions.
 Right now, the Navbar is "overriding" the Content component.
 The Footer was pushed down to the bottom, so it is no longer a concern.
+- Add the routes for each link in the "navbar" and "footer" component
 ----------------------------------------
 I created the "routes" folder.
 We will declare the routes in there later. 
