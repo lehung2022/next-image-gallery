@@ -1,6 +1,11 @@
 !Important notes for both developers:
 - Everytime we are done coding, immediately commit and push to the current branch.
 Mine is dev-lehung, his is dev-thienshelby
+- After commit and push on current branch, pull and fetch from each other's branch.
+If you are in dev-thienshelby, then pull and fetch from dev-lehung.
+If you are in dev-lehung, do the other way around.
+Then, when we are done pull and fetch from these two branches,
+we will checkout over to master branch, then pull and fetch from either dev-lehung and dev-thienshelby.
 - The main branch to merge is "master".
 However, since we are using github, so it will basically be "pull" and "fetch" for the most part.
 This ain't Gitlab.
