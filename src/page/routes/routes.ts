@@ -1,1 +1,0 @@
-// The routes of each page will get in here
