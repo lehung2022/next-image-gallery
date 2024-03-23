@@ -1,26 +1,35 @@
-"use client"
+"use client";
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
 
   const handleResize = () => {
-    if (window.innerWidth >= 768) { // Assuming 768px is your md breakpoint
-        setNav(false);
+    if (window.innerWidth >= 768) {
+      // Assuming 768px is your md breakpoint
+      setNav(false);
     }
-};
+  };
 
-// Set up event listener for window resize
-useEffect(() => {
-    window.addEventListener('resize', handleResize);
-
-    // Clean up the event listener
+  // Debounce the resize event handler
+  const debounceResize = useMemo(() => {
+    const delay = 250; // Adjust the delay as needed
+    let timeoutId: NodeJS.Timeout;
     return () => {
-        window.removeEventListener('resize', handleResize);
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(handleResize, delay);
     };
-}, []);
+  }, []);
+
+  // Set up event listener for window resize
+  useEffect(() => {
+    window.addEventListener("resize", debounceResize);
+    return () => {
+      window.removeEventListener("resize", debounceResize);
+    };
+  }, [debounceResize]);
 
   const links = [
     {
