@@ -1,6 +1,5 @@
 {
   "hosting": {
-    "site": "next-gallery-app",
     "public": "public",
     "ignore": [
       "firebase.json",

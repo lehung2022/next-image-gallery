@@ -1,0 +1,80 @@
+[debug] [2024-03-28T04:33:47.802Z] ----------------------------------------------------------------------
+[debug] [2024-03-28T04:33:47.804Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ASUS\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-03-28T04:33:47.805Z] CLI Version:   13.6.0
+[debug] [2024-03-28T04:33:47.805Z] Platform:      win32
+[debug] [2024-03-28T04:33:47.805Z] Node Version:  v20.9.0
+[debug] [2024-03-28T04:33:47.805Z] Time:          Thu Mar 28 2024 11:33:47 GMT+0700 (Indochina Time)
+[debug] [2024-03-28T04:33:47.805Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-03-28T04:33:47.871Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-03-28T04:33:47.871Z] > authorizing via signed-in user (tran.nguyen.han1427@gmail.com)
+[debug] [2024-03-28T04:33:47.872Z] [iam] checking project nextjs-image-gallery-418014 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-03-28T04:33:47.874Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/nextjs-image-gallery-418014:testIamPermissions [none]
+[debug] [2024-03-28T04:33:47.874Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/nextjs-image-gallery-418014:testIamPermissions x-goog-quota-user=projects/nextjs-image-gallery-418014
+[debug] [2024-03-28T04:33:47.874Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/nextjs-image-gallery-418014:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-03-28T04:33:48.897Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/nextjs-image-gallery-418014:testIamPermissions 200
+[debug] [2024-03-28T04:33:48.898Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/nextjs-image-gallery-418014:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-03-28T04:33:48.898Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/nextjs-image-gallery-418014/serviceAccounts/nextjs-image-gallery-418014@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2024-03-28T04:33:48.898Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/nextjs-image-gallery-418014/serviceAccounts/nextjs-image-gallery-418014@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2024-03-28T04:33:50.099Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/nextjs-image-gallery-418014/serviceAccounts/nextjs-image-gallery-418014@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2024-03-28T04:33:50.100Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/nextjs-image-gallery-418014/serviceAccounts/nextjs-image-gallery-418014@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2024-03-28T04:33:50.101Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/nextjs-image-gallery-418014 [none]
+[debug] [2024-03-28T04:33:50.392Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/nextjs-image-gallery-418014 200
+[debug] [2024-03-28T04:33:50.392Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/nextjs-image-gallery-418014 {"projectId":"nextjs-image-gallery-418014","projectNumber":"539222337352","displayName":"NextJS Image Gallery","name":"projects/nextjs-image-gallery-418014","resources":{"hostingSite":"nextjs-image-gallery-418014","storageBucket":"nextjs-image-gallery-418014.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_cc78e56b-b61f-4203-9616-a2c56dee8405"}
+[info] 
+[info] === Deploying to 'nextjs-image-gallery-418014'...
+[info] 
+[info] i  deploying firestore, functions, hosting 
+[debug] [2024-03-28T04:33:50.517Z] TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string. Received undefined
+    at new NodeError (node:internal/errors:406:5)
+    at validateString (node:internal/validators:162:11)
+    at Object.join (node:path:433:7)
+    at Config.path (C:\Users\ASUS\AppData\Roaming\npm\node_modules\firebase-tools\lib\config.js:125:45)
+    at getChildEnvironment (C:\Users\ASUS\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\lifecycleHooks.js:56:49)
+    at runTargetCommands (C:\Users\ASUS\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\lifecycleHooks.js:77:14)
+    at C:\Users\ASUS\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\lifecycleHooks.js:151:24
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async chain (C:\Users\ASUS\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\index.js:38:9)
+    at async deploy (C:\Users\ASUS\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\index.js:94:5)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2024-03-28T04:35:29.638Z] ----------------------------------------------------------------------
+[debug] [2024-03-28T04:35:29.640Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ASUS\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-03-28T04:35:29.640Z] CLI Version:   13.6.0
+[debug] [2024-03-28T04:35:29.641Z] Platform:      win32
+[debug] [2024-03-28T04:35:29.641Z] Node Version:  v20.9.0
+[debug] [2024-03-28T04:35:29.641Z] Time:          Thu Mar 28 2024 11:35:29 GMT+0700 (Indochina Time)
+[debug] [2024-03-28T04:35:29.641Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-03-28T04:35:29.708Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-03-28T04:35:29.709Z] > authorizing via signed-in user (tran.nguyen.han1427@gmail.com)
+[debug] [2024-03-28T04:35:29.709Z] [iam] checking project nextjs-image-gallery-418014 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-03-28T04:35:29.711Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/nextjs-image-gallery-418014:testIamPermissions [none]
+[debug] [2024-03-28T04:35:29.711Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/nextjs-image-gallery-418014:testIamPermissions x-goog-quota-user=projects/nextjs-image-gallery-418014
+[debug] [2024-03-28T04:35:29.711Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/nextjs-image-gallery-418014:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-03-28T04:35:30.714Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/nextjs-image-gallery-418014:testIamPermissions 200
+[debug] [2024-03-28T04:35:30.714Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/nextjs-image-gallery-418014:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-03-28T04:35:30.715Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/nextjs-image-gallery-418014/serviceAccounts/nextjs-image-gallery-418014@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2024-03-28T04:35:30.715Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/nextjs-image-gallery-418014/serviceAccounts/nextjs-image-gallery-418014@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2024-03-28T04:35:31.830Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/nextjs-image-gallery-418014/serviceAccounts/nextjs-image-gallery-418014@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2024-03-28T04:35:31.830Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/nextjs-image-gallery-418014/serviceAccounts/nextjs-image-gallery-418014@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2024-03-28T04:35:31.831Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/nextjs-image-gallery-418014 [none]
+[debug] [2024-03-28T04:35:32.156Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/nextjs-image-gallery-418014 200
+[debug] [2024-03-28T04:35:32.156Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/nextjs-image-gallery-418014 {"projectId":"nextjs-image-gallery-418014","projectNumber":"539222337352","displayName":"NextJS Image Gallery","name":"projects/nextjs-image-gallery-418014","resources":{"hostingSite":"nextjs-image-gallery-418014","storageBucket":"nextjs-image-gallery-418014.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_cc78e56b-b61f-4203-9616-a2c56dee8405"}
+[info] 
+[info] === Deploying to 'nextjs-image-gallery-418014'...
+[info] 
+[info] i  deploying firestore, functions, hosting 
+[debug] [2024-03-28T04:35:32.279Z] TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string. Received undefined
+    at new NodeError (node:internal/errors:406:5)
+    at validateString (node:internal/validators:162:11)
+    at Object.join (node:path:433:7)
+    at Config.path (C:\Users\ASUS\AppData\Roaming\npm\node_modules\firebase-tools\lib\config.js:125:45)
+    at getChildEnvironment (C:\Users\ASUS\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\lifecycleHooks.js:56:49)
+    at runTargetCommands (C:\Users\ASUS\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\lifecycleHooks.js:77:14)
+    at C:\Users\ASUS\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\lifecycleHooks.js:151:24
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async chain (C:\Users\ASUS\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\index.js:38:9)
+    at async deploy (C:\Users\ASUS\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\index.js:94:5)
+[error] 
+[error] Error: An unexpected error has occurred.
