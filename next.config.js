@@ -4,10 +4,6 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "staticdelivery.nexusmods.com",
-      },
-      {
-        protocol: "https",
         hostname: "firebasestorage.googleapis.com",
       },
     ],
