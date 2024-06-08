@@ -6,6 +6,22 @@ const nextConfig = {
         protocol: "https",
         hostname: "firebasestorage.googleapis.com",
       },
+      {
+        protocol: "https",
+        hostname: "images.alphacoders.com",
+      },
+      {
+        protocol: "https",
+        hostname: "images3.alphacoders.com",
+      },
+      {
+        protocol: "https",
+        hostname: "images4.alphacoders.com",
+      },
+      {
+        protocol: "https",
+        hostname: "images8.alphacoders.com",
+      },
     ],
   },
 };

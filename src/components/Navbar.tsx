@@ -34,15 +34,15 @@ const Navbar = () => {
   const links = [
     {
       id: 1,
-      link: "about",
+      link: "characters",
     },
     {
       id: 2,
-      link: "portfolio",
+      link: "timelines",
     },
     {
       id: 3,
-      link: "experience",
+      link: "about",
     },
     {
       id: 4,
@@ -92,7 +92,7 @@ const Navbar = () => {
         {links.map(({ id, link }) => (
           <li
             key={id}
-            className="nav-links px-4 cursor-pointer capitalize font-medium text-gray-500 hover:scale-105 hover:text-white duration-200 link-underline"
+            className="nav-links px-4 cursor-pointer capitalize font-medium text-gray-500 hover:scale-105 hover:text-red-500 duration-200 link-underline"
           >
             <Link href={link}>{link}</Link>
           </li>
@@ -111,7 +111,7 @@ const Navbar = () => {
           {links.map(({ id, link }) => (
             <li
               key={id}
-              className="px-4 cursor-pointer capitalize py-6 text-4xl"
+              className="px-4 cursor-pointer capitalize py-6 text-4xl "
             >
               <Link onClick={() => setNav(!nav)} href={link}>
                 {link}
