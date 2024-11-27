@@ -1,0 +1,53 @@
+!Important notes for both developers:
+- Everytime we are done coding, immediately commit and push to the current branch.
+Mine is dev-lehung, his is dev-thienshelby
+- After commit and push on current branch, pull and fetch from each other's branch.
+If you are in dev-thienshelby, then pull and fetch from dev-lehung.
+If you are in dev-lehung, do the other way around.
+Then, when we are done pull and fetch from these two branches,
+we will checkout over to master branch, then pull and fetch from either dev-lehung and dev-thienshelby.
+- The main branch to merge is "master".
+However, since we are using github, so it will basically be "pull" and "fetch" for the most part.
+This ain't Gitlab.
+- The Content component, will be counted as the Body of the page.
+This component, will be built by using Grid. This is a feature that is available in Tailwind CSS.
+We don't need to install Material UI. Just use what we already have.
+- The Footer and Navbar will be the absolute components.
+Meaning, they cannot be altered, replaced with anything else.
+We can change how they look, but we cannot replace them with other components.
+These two things will be used throughout the course of the development.
+- We will develop this app with the thinking: "Mobile screen is first".
+That may take a little bit long time at first, but it will save us a lot of time in the future
+- That is all for now. 
+I will add more, when we are ready for the API pics of historical characters.
+----------------------------------------
+Missions for me:
+- Build the three components: Navbar, Footer, and Content
+They are all done now
+- Pull and fetch the code from the main branch(Which is master) to the other two branches.
+One is dev-lehung, the other is dev-thienshelby
+It is also done. 
+----------------------------------------
+Missions for Thien-Shelby: 
+- Build the Log in/Register component
+He also built the Back-End part, so I will connect to that server later on.
+- Build the Search Bar below the Navbar component.
+Make it become Responsive, and that Search Bar will filter the keyword.
+This is common in every Search Bar 
+- Adjust the three components, to make them stay in the right directions.
+Right now, the Navbar is "overriding" the Content component.
+The Footer was pushed down to the bottom, so it is no longer a concern.
+- Add the routes for each link in the "navbar" and "footer" component
+----------------------------------------
+I created the "routes" folder.
+We will declare the routes in there later. 
+----------------------------------------
+----------------------------------------
+----------------------------------------
+----------------------------------------
+----------------------------------------
+----------------------------------------
+----------------------------------------
+----------------------------------------
+----------------------------------------
+----------------------------------------
