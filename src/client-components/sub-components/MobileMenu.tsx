@@ -21,7 +21,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, toggleMenu }) => {
       <div
         className={`fixed top-0 left-0 w-full h-full bg-slate-800 text-white flex flex-col items-center justify-center transform ${
           isOpen ? "translate-x-0" : "translate-x-full"
-        } transition-transform duration-700 ease-in-out z-40`}
+        } transition-transform duration-500 ease-in-out z-40`}
       >
         {/* Close button in the top-left corner */}
         <button

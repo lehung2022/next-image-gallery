@@ -14,9 +14,9 @@ export default function Error({
     searchParams.get("message") || error?.message || "Unknown error";
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen gap-6 p-6 text-white bg-gray-900">
-      <h1 className="text-6xl font-bold text-yellow-50">500</h1>
-      <p className="text-2xl text-gray-300">Something Went Wrong</p>
+    <div className="flex flex-col items-center justify-center min-h-screen gap-6 p-8 sm:p-10 text-white bg-gray-900">
+      <h1 className="text-4xl sm:text-6xl font-bold text-yellow-50">500</h1>
+      <p className="text-xl sm:text-2xl text-gray-300">Something Went Wrong</p>
       <p className="text-lg text-gray-400 max-w-md text-center">
         An error occurred: {errorMessage}.
       </p>

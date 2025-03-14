@@ -27,7 +27,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="flex flex-col gap-4 p-4">
+    <div className="flex flex-col gap-4 p-6 sm:p-8">
       <div className="flex flex-col sm:flex-row justify-center gap-4">
         {tabs.map((tab) => (
           <button

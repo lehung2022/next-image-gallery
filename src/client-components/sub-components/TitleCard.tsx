@@ -10,7 +10,7 @@ interface TitleCardProps {
 
 const TitleCard = ({ title, href, imageSrc }: TitleCardProps) => {
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-6 p-6 sm:p-8">
       <section
         className="text-4xl bg-gray-950/50 text-center font-extrabold leading-none tracking-tight text-yellow-50 md:text-5xl lg:text-6xl dark:text-white"
         aria-label={title}
