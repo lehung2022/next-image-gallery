@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Footer from "@/client-components/main-components/Footer";
 import Navbar from "@/client-components/main-components/Navbar";
 import Image from "next/image";
@@ -17,14 +18,28 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
-      <head>
-        <link
-          rel="preload"
-          href="/vietnamese_generals/lam_son_vs_minh_02.jpg"
-          as="image"
-          fetchPriority="high"
+      <Head>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="robots" content="index, follow" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta property="og:title" content="Chronicles of Valor" />
+        <meta
+          property="og:description"
+          content="Explore historical timelines, famous generals, and significant events in history."
         />
-      </head>
+        <meta property="og:image" content="/other_images/japan-cities.jpg" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://yourdomain.com" />
+        <meta property="og:site_name" content="Chronicles of Valor" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Chronicles of Valor" />
+        <meta
+          name="twitter:description"
+          content="Explore historical timelines, famous generals, and significant events in history."
+        />
+        <meta name="twitter:image" content="/other_images/japan-cities.jpg" />
+      </Head>
       <body className="font-sans antialiased min-h-screen flex flex-col relative">
         <div className="fixed inset-0 z-[-1]">
           <Image

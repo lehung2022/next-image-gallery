@@ -6,7 +6,7 @@ const Generals = () => {
   return (
     <>
       <div
-        className={`flex flex-col items-center transition-transform duration-1000 ease-out px-4`} // Added padding (px-4) to prevent edge touching on mobile
+        className={`flex flex-col items-center transition-transform duration-1000 ease-out px-4 py-4`} // Added padding (px-4) to prevent edge touching on mobile
       >
         <div
           className={`text-3xl bg-gray-950/50 text-center font-bold text-yellow-50 mb-4`}
@@ -25,13 +25,13 @@ const Generals = () => {
             </div>
           ))}
         </section>
-        <Link href="/">
-          <button
-            className={`text-white bg-slate-950/50 hover:bg-slate-950 mt-4 px-4 py-2 rounded-lg mb-4`}
-          >
-            ← Back
-          </button>
-        </Link>
+        <div className="flex justify-start max-w-5xl mx-auto mb-4">
+          <Link href="/">
+            <button className="mt-8 px-6 py-3 text-lg text-white font-bold bg-slate-950/50 hover:bg-stone-700 transition-all duration-200 rounded-lg shadow-lg hover:scale-105">
+              ← Back
+            </button>
+          </Link>
+        </div>
       </div>
     </>
   );

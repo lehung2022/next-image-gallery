@@ -1,12 +1,11 @@
-"use client";
 import Image from "next/image";
 import Link from "next/link";
 
-interface TitleCardProps {
+type TitleCardProps = {
   title: string;
   href: string;
   imageSrc: string;
-}
+};
 
 const TitleCard = ({ title, href, imageSrc }: TitleCardProps) => {
   return (
@@ -29,8 +28,7 @@ const TitleCard = ({ title, href, imageSrc }: TitleCardProps) => {
               fill
               className="object-contain transform-gpu hover:scale-105 hover:rotate-2 hover:opacity-75 hover:shadow-lg hover:shadow-yellow-500/50 transition-all duration-300 will-change-transform"
               sizes="(max-width: 640px) 100vw, (max-width: 768px) 80vw, (max-width: 1024px) 60vw, 50vw)"
-              priority={true} // Tải sớm tất cả ảnh
-              loading="eager"
+              priority={href === "/generals"} // Chỉ preload cho generals
             />
           </div>
         </Link>
