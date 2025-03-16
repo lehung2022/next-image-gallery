@@ -16,12 +16,19 @@ interface RootLayoutProps {
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
+  const isDev = process.env.NODE_ENV === "development"; // Không cần .env, dùng mặc định
+  const baseUrl = isDev ? "http://localhost:3000" : "https://yourdomain.com"; // Tạm thời hardcode
+
   return (
     <html lang="en">
       <Head>
         <meta charSet="UTF-8" />
+        {/* <link rel="dns-prefetch" href="https://external-domain.com" /> Preparation for the future, if the loading is slow */} 
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="robots" content="index, follow" />
+        <meta
+          name="robots"
+          content={isDev ? "noindex, nofollow" : "index, follow"}
+        />
         <link rel="icon" href="/favicon.ico" />
         <meta property="og:title" content="Chronicles of Valor" />
         <meta
@@ -30,7 +37,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         />
         <meta property="og:image" content="/other_images/japan-cities.jpg" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yourdomain.com" />
+        <meta property="og:url" content={baseUrl} /> {/* Động hóa tạm thời */}
         <meta property="og:site_name" content="Chronicles of Valor" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Chronicles of Valor" />

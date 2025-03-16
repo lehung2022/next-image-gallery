@@ -29,9 +29,9 @@ const HongKong = () => {
   return (
     <div className="max-w-5xl mx-auto px-6">
       {/* Back Button */}
-      <div className="flex justify-start mb-4">
+      <div className="flex justify-start max-w-5xl mx-auto mb-2">
         <Link href="/cities">
-          <button className="text-white bg-slate-950 hover:bg-slate-950/50 px-4 py-2 rounded-lg">
+          <button className="mt-8 px-6 py-3 text-lg text-white font-bold bg-slate-950/50 hover:bg-stone-700 transition-all duration-200 rounded-lg shadow-lg hover:scale-105">
             ← Back
           </button>
         </Link>

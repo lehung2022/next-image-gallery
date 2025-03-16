@@ -2,7 +2,6 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
-
 // Fetch function for Tokyo
 const getTokyoData = async () => {
   const mockData = {
@@ -31,6 +30,13 @@ const Tokyo = () => {
   return (
     <>
       <div className="max-w-5xl mx-auto px-6 flex flex-col items-center text-center">
+        <div className="flex justify-start max-w-5xl mx-auto mb-2">
+          <Link href="/cities">
+            <button className="mt-8 px-6 py-3 text-lg text-white font-bold bg-slate-950/50 hover:bg-stone-700 transition-all duration-200 rounded-lg shadow-lg hover:scale-105">
+              ← Back
+            </button>
+          </Link>
+        </div>
         {loading ? (
           <div className="text-gray-300">Đang tải dữ liệu Tokyo...</div>
         ) : (
@@ -43,12 +49,6 @@ const Tokyo = () => {
             </div>
           </div>
         )}
-        {/* Back Button (Centralized) */}
-        <Link href="/cities">
-          <button className="text-white bg-slate-900 hover:bg-slate-950/50 px-4 py-2 rounded-lg mt-4">
-            ← Back
-          </button>
-        </Link>
       </div>
     </>
   );

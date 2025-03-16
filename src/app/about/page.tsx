@@ -1,10 +1,17 @@
 import Link from "next/link";
 import { lazy, Suspense } from "react";
 import { domainLinks } from "@/client-components/sub-components/domain-links";
+import type { Metadata } from "next";
 
 const Information = lazy(
   () => import("@/client-components/sub-components/Info")
 );
+
+export const metadata: Metadata = {
+  title: "About | Chronicles of Valor",
+  description:
+    "Learn about the Chronicles of Valor project, its purpose, sources, and languages used.",
+};
 
 export default function About() {
   return (
