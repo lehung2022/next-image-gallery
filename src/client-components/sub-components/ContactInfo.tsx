@@ -1,4 +1,3 @@
-"use client";
 import { FaTwitter, FaSkype, FaEnvelope, FaDiscord } from "react-icons/fa";
 
 interface ContactInfoProps {

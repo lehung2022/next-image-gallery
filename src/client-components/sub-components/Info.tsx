@@ -1,4 +1,3 @@
-"use client";
 type InfoProps = {
   title: string;
   items: { label: string; url: string }[];
