@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Suspense } from "react";
 import { cities } from "@/client-components/city-components/cities";
 import type { Metadata } from "next";
 
@@ -19,15 +18,13 @@ const Cities = () => {
           </button>
         </Link>
       </div>
-      <section className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 w-full max-w-5xl mx-auto">
+      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-5xl animate-fadeIn">
         {cities.map(({ id, component: City }) => (
           <div
             key={id}
-            className="w-full border-2 border-gray-300 rounded-lg p-4"
+            className="w-full border-2 border-gray-300 rounded-lg p-4 hover:shadow-lg transition-all duration-200"
           >
-            <Suspense fallback={<div className="h-60 bg-gray-200"></div>}>
-              <City />
-            </Suspense>
+            <City />
           </div>
         ))}
       </section>

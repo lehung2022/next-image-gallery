@@ -27,7 +27,7 @@ export default async function BakGing() {
       </div>
 
       {/* Biography */}
-      <section className="text-white">
+      <section className="text-white bg-slate-950/50 rounded-lg">
         <h1 className="text-4xl font-bold text-yellow-50 mb-4">{data.name}</h1>
         <p className="text-lg text-gray-300">{data.bio}</p>
         {/* Danh sách thành phố gợi ý */}

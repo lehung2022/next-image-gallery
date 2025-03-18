@@ -41,22 +41,15 @@ const HongKong = () => {
       <section className="text-white">
         {loading ? (
           <div className="text-gray-300">Đang tải dữ liệu Hương Cảng...</div>
-        ) : error ? (
-          <div className="text-red-500">{error}</div>
         ) : (
-          <>
+          <div className="bg-slate-950/50 p-6 rounded-lg shadow-md max-w-4xl mx-auto">
             <h1 className="text-4xl font-bold text-yellow-50 mb-4">
               {data?.name}
             </h1>
-            <p className="text-lg text-gray-300">{data?.bio}</p>
-            {/* Thêm danh sách thành phố gợi ý sau này */}
-            <div className="mt-6">
-              <h2 className="text-2xl font-bold text-yellow-50">
-                Thành phố khác
-              </h2>
-              <p className="text-gray-300">Chờ API: Cửu Long, Đảo HK...</p>
+            <div className="text-lg text-gray-300 whitespace-pre-line overflow-y-auto max-h-[500px] scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-900">
+              {data?.bio}
             </div>
-          </>
+          </div>
         )}
       </section>
     </div>

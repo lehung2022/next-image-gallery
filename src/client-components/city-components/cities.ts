@@ -5,7 +5,7 @@ import Taiwan from "./Taiwan";
 import China from "./China";
 
 export const cities = [
-  { id: "vietnam", component: Vietnam },
+  { id: "sai-gon", component: Vietnam },
   { id: "nihon", component: Nihon },
   { id: "taiwan", component: Taiwan },
   { id: "china", component: China },

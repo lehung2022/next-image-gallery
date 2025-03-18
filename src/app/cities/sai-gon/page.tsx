@@ -38,11 +38,13 @@ const Saigon = () => {
         {loading ? (
           <div className="text-gray-300">Đang tải dữ liệu Sài Gòn...</div>
         ) : (
-          <div className="text-white">
+          <div className="bg-slate-950/50 p-6 rounded-lg shadow-md max-w-4xl mx-auto">
             <h1 className="text-4xl font-bold text-yellow-50 mb-4">
               {data?.name}
             </h1>
-            <p className="text-lg text-gray-300">{data?.bio}</p>
+            <div className="text-lg text-gray-300 whitespace-pre-line overflow-y-auto max-h-[500px] scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-900">
+              {data?.bio}
+            </div>
           </div>
         )}
       </div>
