@@ -11,9 +11,9 @@ const Contact = () => {
         className={`flex flex-col items-center p-10 text-white`}
       >
         <ContactInfo
-          name="Le Hung(黎興)"
-          email="hung.le.programmer@gmail.com"
-          twitter="https://x.com/lngm1916"
+          name="陳元扞: Trần Nguyên Hãn"
+          email="tran.nguyen.han1427@gmail.com"
+          twitter="https://x.com/nguyenhan1427"
           skype="https://join.skype.com/invite/pMngRGworexZ"
           discord="https://discord.com/users/1344897403093909566"
         />
