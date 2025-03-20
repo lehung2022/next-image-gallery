@@ -1,59 +1,73 @@
-"use client";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import type { Metadata } from "next";
 
-const HongKong = () => {
-  const [data, setData] = useState<{ name: string; bio: string } | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+export const metadata: Metadata = {
+  title: "Hương Cảng | Cities | Chronicles of Valor",
+  description:
+    "揭露中共暴政下的城市與歷史真相 - Expose the cities and historical truth under CCP tyranny.",
+};
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setLoading(true);
-        const mockData = {
-          name: "Hương Cảng (Hong Kong)",
-          bio: "Thành phố tự do trước 2019. Biến cố lớn: Bàn giao 1997 (Anh → TQ), biểu tình Umbrella 2014, phong trào chống luật dẫn độ 2019-2020, luật an ninh quốc gia 2020. Gái ngành thì nổi tiếng ở Wan Chai, chờ khảo sát thêm 😌.",
-        };
-        // Thay bằng: await fetch("/api/cities/hong-kong") khi có Firebase
-        setTimeout(() => setData(mockData), 1000); // Delay giả lập
-      } catch (err) {
-        setError("Không tải được dữ liệu Hương Cảng.");
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchData();
-  }, []);
+async function getChinaRegionData() {
+  const mockData = [
+    {
+      name: "香港 (Hương Cảng)",
+      bio: "英治時期自由港，後 bị 中共 吞噬 - Cảng tự do thời Anh, sau bị Trung Cộng nuốt chửng.",
+      events: [
+        "雨傘運動 (2014) - Phong trào Dù: Dân chống Trung Cộng khốn kiếp.",
+        "反送中 (2019) - Chống luật dẫn độ: Dân Hương Cảng đánh bại ý đồ Trung Cộng.",
+      ],
+      politics:
+        "Hiện tại: Trung Cộng đàn áp, dân mất tự do, biến thành địa ngục.",
+    },
+    {
+      name: "九龍 (Cửu Long)",
+      bio: "都市區，英治時期發達 - Khu đô thị, phát triển thời Anh.",
+      events: [
+        "國民黨活動 (1940s) - Hoạt động Quốc Dân Đảng: Chống Nhật, không phải Trung Cộng.",
+      ],
+      politics: "Hiện tại: Trung Cộng kiểm soát, dân bất mãn.",
+    },
+  ];
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+  return mockData;
+}
+
+export default async function ChinaRegionPage() {
+  const cities = await getChinaRegionData();
 
   return (
-    <div className="max-w-5xl mx-auto px-6">
-      {/* Back Button */}
-      <div className="flex justify-start max-w-5xl mx-auto mb-2">
+    <div className="max-w-5xl mx-auto px-6 py-10 text-white">
+      <div className="flex justify-start mb-6">
         <Link href="/cities">
-          <button className="mt-8 px-6 py-3 text-lg text-white font-bold bg-slate-950/50 hover:bg-stone-700 transition-all duration-200 rounded-lg shadow-lg hover:scale-105">
+          <button className="px-6 py-3 text-lg font-bold bg-slate-950/50 hover:bg-stone-700 transition-all duration-200 rounded-lg shadow-lg hover:scale-105">
             ← Back
           </button>
         </Link>
       </div>
-
-      {/* Biography */}
-      <section className="text-white">
-        {loading ? (
-          <div className="text-gray-300">Đang tải dữ liệu Hương Cảng...</div>
-        ) : (
-          <div className="bg-slate-950/50 p-6 rounded-lg shadow-md max-w-4xl mx-auto">
-            <h1 className="text-4xl font-bold text-yellow-50 mb-4">
-              {data?.name}
-            </h1>
-            <div className="text-lg text-gray-300 whitespace-pre-line overflow-y-auto max-h-[500px] scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-900">
-              {data?.bio}
+      <section className="animate-fadeIn">
+        <h1 className="text-4xl font-bold text-yellow-50 mb-6">
+          香港(Hương Cảng)
+        </h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {cities.map((city, index) => (
+            <div
+              key={index}
+              className="bg-slate-950/50 p-4 rounded-lg border-2 border-black hover:shadow-lg transition-all duration-200"
+            >
+              <h2 className="text-2xl font-bold text-yellow-50 mb-2">
+                {city.name}
+              </h2>
+              <p className="text-gray-300">{city.bio}</p>
+              <ul className="mt-2 text-gray-300 list-disc pl-5">
+                {city.events.map((event, idx) => (
+                  <li key={idx}>{event}</li>
+                ))}
+              </ul>
+              <p className="mt-2 text-gray-300 italic">{city.politics}</p>
             </div>
-          </div>
-        )}
+          ))}
+        </div>
       </section>
     </div>
   );
-};
-
-export default HongKong;
+}

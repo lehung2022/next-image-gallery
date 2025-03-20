@@ -1,55 +1,80 @@
-"use client";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import type { Metadata } from "next";
 
-// Fetch function for Tokyo
-const getToiBakData = async () => {
-  const mockData = {
-    name: "Toi Bak",
-    bio: `Taipei was founded in the early 18th century by Chinese immigrants from Fujian province on the mainland. In the 19th century it became an important centre for overseas trade via its ports of Chi-lung and Tan-shui (Danshui). Taipei was made an administrative entity of the Chinese government in 1875, and, when Taiwan was proclaimed a province of China in 1886, the city was made the provincial capital. The Japanese acquired Taiwan in 1895 as part of the peace agreement after the first Sino-Japanese War and retained Taipei as the capital. During that time the city acquired the characteristics of an administrative centre, including many new public buildings and housing for civil servants.`, // Add the rest if needed
-  };
-  await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate API delay
-  return mockData;
+export const metadata: Metadata = {
+  title: "Đài Loan | Cities | Chronicles of Valor",
+  description:
+    "揭露中共暴政下的城市與歷史真相 - Expose the cities and historical truth under CCP tyranny.",
 };
 
-const ToiBak = () => {
-  const [data, setData] = useState<{ name: string; bio: string } | null>(null);
-  const [loading, setLoading] = useState(true);
+async function getChinaRegionData() {
+  const mockData = [
+    {
+      name: "臺北 (Đài Bắc)",
+      bio: "國民黨退守之地，反共堡壘 - Nơi Quốc Dân Đảng rút lui, pháo đài chống cộng.",
+      events: [
+        "二二八事件 (1947) - Sự kiện 228: Dân chống Quốc Dân Đảng, không phải Việt Cộng.",
+        "反共抗議 (2020s) - Biểu tình chống Trung Cộng: Dân đòi độc lập.",
+      ],
+      politics: "Hiện tại: Dân chủ, chống Trung Cộng khốn nạn xâm lược.",
+    },
+    {
+      name: "臺南 (Đài Nam)",
+      bio: "古都，反共精神強烈 - Cố đô, tinh thần chống cộng mạnh mẽ.",
+      events: [
+        "民主運動 (1980s) - Phong trào dân chủ: Chống độc tài, không liên quan TQCS.",
+      ],
+      politics: "Hiện tại: Ủng hộ độc lập, ghét Trung Cộng.",
+    },
+    {
+      name: "高雄 (Cao Hùng)",
+      bio: "港口重鎮，反共前線 - Trấn cảng lớn, tiền tuyến chống cộng.",
+      events: [
+        "美麗島事件 (1979) - Sự kiện Mỹ Lệ Đảo: Dân chủ hóa, chống độc tài.",
+      ],
+      politics: "Hiện tại: Dân bất mãn Trung Cộng, đòi tự do.",
+    },
+  ];
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+  return mockData;
+}
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const fetchedData = await getToiBakData();
-      setData(fetchedData);
-      setLoading(false);
-    };
-    fetchData();
-  }, []);
+export default async function ChinaRegionPage() {
+  const cities = await getChinaRegionData();
 
   return (
-    <>
-      <div className="max-w-5xl mx-auto px-6 flex flex-col items-center text-center">
-        <div className="flex justify-start max-w-5xl mx-auto mb-2">
-          <Link href="/cities">
-            <button className="mt-8 px-6 py-3 text-lg text-white font-bold bg-slate-950/50 hover:bg-stone-700 transition-all duration-200 rounded-lg shadow-lg hover:scale-105">
-              ← Back
-            </button>
-          </Link>
-        </div>
-        {loading ? (
-          <div className="text-gray-300">Đang tải dữ liệu Đài Bắc...</div>
-        ) : (
-          <div className="bg-slate-950/50 p-6 rounded-lg shadow-md max-w-4xl mx-auto">
-            <h1 className="text-4xl font-bold text-yellow-50 mb-4">
-              {data?.name}
-            </h1>
-            <div className="text-lg text-gray-300 whitespace-pre-line overflow-y-auto max-h-[500px] scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-900">
-              {data?.bio}
-            </div>
-          </div>
-        )}
+    <div className="max-w-5xl mx-auto px-6 py-10 text-white">
+      <div className="flex justify-start mb-6">
+        <Link href="/cities">
+          <button className="px-6 py-3 text-lg font-bold bg-slate-950/50 hover:bg-stone-700 transition-all duration-200 rounded-lg shadow-lg hover:scale-105">
+            ← Back
+          </button>
+        </Link>
       </div>
-    </>
+      <section className="animate-fadeIn">
+        <h1 className="text-4xl font-bold text-yellow-50 mb-6">
+          臺灣(Đài Loan)
+        </h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {cities.map((city, index) => (
+            <div
+              key={index}
+              className="bg-slate-950/50 p-4 rounded-lg border-2 border-black hover:shadow-lg transition-all duration-200"
+            >
+              <h2 className="text-2xl font-bold text-yellow-50 mb-2">
+                {city.name}
+              </h2>
+              <p className="text-gray-300">{city.bio}</p>
+              <ul className="mt-2 text-gray-300 list-disc pl-5">
+                {city.events.map((event, idx) => (
+                  <li key={idx}>{event}</li>
+                ))}
+              </ul>
+              <p className="mt-2 text-gray-300 italic">{city.politics}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
   );
-};
-
-export default ToiBak;
+}
