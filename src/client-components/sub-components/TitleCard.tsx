@@ -1,5 +1,7 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 type TitleCardProps = {
   title: string;
@@ -8,6 +10,9 @@ type TitleCardProps = {
 };
 
 const TitleCard = ({ title, href, imageSrc }: TitleCardProps) => {
+  const pathname = usePathname(); // Lấy route hiện tại
+  const shouldPreload = pathname === "/generals"; // Chỉ preload ở /generals
+
   return (
     <div className="flex flex-col gap-6 p-6 sm:p-8">
       <section
@@ -28,7 +33,7 @@ const TitleCard = ({ title, href, imageSrc }: TitleCardProps) => {
               fill
               className="object-contain transform-gpu hover:scale-105 hover:rotate-2 hover:opacity-75 hover:shadow-lg hover:shadow-yellow-500/50 transition-all duration-300 will-change-transform"
               sizes="(max-width: 640px) 100vw, (max-width: 768px) 80vw, (max-width: 1024px) 60vw, 50vw)"
-              priority={href === "/generals"} // Chỉ preload cho generals
+              priority={shouldPreload} // Chỉ preload khi ở /generals
             />
           </div>
         </Link>

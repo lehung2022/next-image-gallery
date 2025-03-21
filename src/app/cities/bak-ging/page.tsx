@@ -11,16 +11,16 @@ async function getChinaOverviewData() {
   const mockData = [
     {
       name: "北京 (Bắc Kinh)",
-      slug: "beijing",
+      slug: "bak-ging",
       bio: "滿清滅亡後淪為中共巢穴 - Sau Mãn Thanh thành hang ổ Trung Cộng.",
       events: [
-        { title: "天安門屠殺 (1989)", slug: "tiananmen-1989" },
         { title: "臺兒莊大捷 (1938)", slug: "tainierzhuang-1938" },
+        { title: "天安門屠殺 (1989)", slug: "tiananmen-1989" },
       ],
     },
     {
       name: "上海 (Thượng Hải)",
-      slug: "shanghai",
+      slug: "seung-hoi",
       bio: "國民黨治理，後被中共占 - Quốc Dân Đảng quản lý, sau bị Trung Cộng chiếm.",
       events: [{ title: "四行倉庫保衛戰 (1937)", slug: "sihang-1937" }],
     },
