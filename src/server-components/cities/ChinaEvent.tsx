@@ -47,7 +47,7 @@ export default async function ChinaEvent({
   } catch (error) {
     notFound();
   }
-  const cityName = city === "beijing" ? "北京 (Bắc Kinh)" : "上海 (Thượng Hải)";
+  const cityName = city === "bak-ging" ? "北京 (Bắc Kinh)" : "上海 (Thượng Hải)";
 
   return (
     <div className="max-w-5xl mx-auto px-6 py-10 text-white">

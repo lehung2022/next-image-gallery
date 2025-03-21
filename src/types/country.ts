@@ -1,4 +1,4 @@
-export type CityData = {
+export type CountryData = {
   name: string;
   slug: string; // Thêm slug cho link
   bio: string;

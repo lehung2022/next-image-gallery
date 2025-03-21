@@ -17,11 +17,11 @@ export async function generateMetadata({
   ): Promise<EventData> {
     const mockFirebase: { [city: string]: { [eventSlug: string]: EventData } } =
       {
-        beijing: {
+        "bak-ging": {
           "tainierzhuang-1938": { title: "臺兒莊大捷 (1938)", detail: "..." },
           "tiananmen-1989": { title: "天安門屠殺 (1989)", detail: "..." },
         },
-        shanghai: {
+        "seung-hoi": {
           "sihang-1937": { title: "四行倉庫保衛戰 (1937)", detail: "..." },
           "clinton-1990s": { title: "克林頓經濟政策 (1990s)", detail: "..." },
         },
